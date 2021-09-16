@@ -1,12 +1,21 @@
-import { StatusBar } from 'expo-status-bar';
+
 import React from 'react';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { TouchableOpacity, Text, View } from 'react-native';
+import css from '../assets/css/Css'
 
 export default function Home(props){
     return (
         <View>
             <Text>HOME do sistema</Text>
-      <Button title='Ir para Login' onPress={()=> props.navigation.navigate('Login')}/>
+      
+      <TouchableOpacity onPress={()=> props.navigation.navigate('Login')}>
+          <Text>IR PARA LOGIN</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity onPress={()=> props.navigation.navigate('Rastreio')}>
+          <Text>IR PARA Rastreio</Text>
+      </TouchableOpacity>
+      
         </View>
       
     );
