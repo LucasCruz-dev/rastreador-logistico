@@ -20,7 +20,7 @@ export default function App() {
                           headerTitleStyle:{alignSelf:'center'} // Ver outras props do options
                         }}
           />
-          <Stack.Screen name="Login" component={Login}/>
+          <Stack.Screen name="Login" options={{headerShown:false}} component={Login}/>
           <Stack.Screen name="Rastreio" component={Rastreio}/>
           {/*<Stack.Screen name="AreaRestrita" component={AreaRestrita}/>*/}
          
