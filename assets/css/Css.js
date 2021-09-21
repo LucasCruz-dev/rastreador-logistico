@@ -7,15 +7,15 @@ const css = StyleSheet.create({
       backgroundColor:'#333',
     },
     
-    login__msg:{
+    login__msg:(text='none')=>({
     fontWeight:'bold',
     fontSize:10,
     color: '#ff0000',
     marginTop: 10,
     marginBottom: 15,
-    display: "none",
+    display: text,
 
-    },
+    }),
     login__form:{
       width: '80%',
 

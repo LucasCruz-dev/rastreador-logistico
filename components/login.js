@@ -36,7 +36,7 @@ export default function Login(){
                 <Text>{user} - {password}</Text>
             </View>
             <View>
-                <Text style={css.login__msg}>Usuário ou Senha inválidos</Text>
+                <Text style={css.login__msg(display)}>Usuário ou Senha inválidos</Text>
             </View>
             <View style={css.login__form}>
                 <TextInput style={css.login__input} placeholder='Usuário' onChangeText={text=>setUser(text)}  /> 
