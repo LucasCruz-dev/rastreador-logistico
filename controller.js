@@ -16,7 +16,11 @@ app.post('/login', async (req,res)=>{
     let response = await user.findOne({
         where:{name: req.body.name, password: req.body.password}
     });
-    console.log(response);
+    if(response === null){
+        res.send(JSON.stringify('error'));
+    } else {
+        res.send(response);
+    }
 });
 
 

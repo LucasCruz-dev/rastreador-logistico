@@ -24,6 +24,15 @@ export default function Login(){
             })
 
         });
+        let json = await response.json();// var que recebe o valor do json enviado no if do Controller.js
+        
+        if(json==='error'){
+            setDisplay('flex');
+            setTimeout(()=>{
+            setDisplay('none')
+            },3000)
+        }
+    
     }
        
         return (       
