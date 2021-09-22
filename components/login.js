@@ -1,10 +1,11 @@
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { StatusBar } from 'expo-status-bar';
 import React, {useState, useEffect} from 'react';
 import { Platform, Text, View, KeyboardAvoidingView, TextInput, TouchableOpacity } from 'react-native';
 import {css} from '../assets/css/Css'
 
 
-export default function Login(){
+export default function Login({navigation}){
     const [display, setDisplay]= useState('none');
     const [user, setUser]= useState(null);
     const [password, setPassword]= useState(null);
@@ -30,8 +31,13 @@ export default function Login(){
             setDisplay('flex');
             setTimeout(()=>{
             setDisplay('none')
-            },3000)
-        }
+            },3000);
+            await AsyncStorage.clear();
+ } else{
+   let userData =  await AsyncStorage.setItem('userData', JSON.stringify(json));//setando no storage o json recebido do backend)
+   navigation.navigate('AreaRestrita');
+ }
+  
     
     }
        
