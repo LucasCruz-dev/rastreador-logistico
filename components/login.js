@@ -19,13 +19,13 @@ export default function Login({navigation}){
               Accept: 'application/json',
               'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ // os dados que serão enviados 
-              name: user,
-              password: password
+            body: JSON.stringify({ 
+              name: user, //Recebe os estados 
+              password: password //Recebe os estados 
             })
 
         });
-        let json = await response.json();// var que recebe o valor do json enviado no if do Controller.js
+        let json = await response.json(); // Tranforma uma string JSON em um obj js
         
         if(json==='error'){
             setDisplay('flex');
@@ -54,8 +54,8 @@ export default function Login({navigation}){
                 <Text style={css.login__msg(display)}>Usuário ou Senha inválidos</Text>
             </View>
             <View style={css.login__form}>
-                <TextInput style={css.login__input} placeholder='Usuário' onChangeText={text=>setUser(text)}  /> 
-                <TextInput style={css.login__input} placeholder='Senha' secureTextEntry={true}  onChangeText={text=>setPassword(text)} />
+                <TextInput style={css.login__input} placeholder='Usuário' onChangeText={text=>setUser(text)}  /> {/* Atualizando o estado do user*/}
+                <TextInput style={css.login__input} placeholder='Senha' secureTextEntry={true}  onChangeText={text=>setPassword(text)} /> {/* Atualizando o estado do password*/}
                 <TouchableOpacity style={css.login__button} onPress={()=>sendForm()}>
                     <Text style={css.login__buttonText}> ENTRAR NO SISTEMA</Text>
                 </TouchableOpacity>
