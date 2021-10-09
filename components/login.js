@@ -25,7 +25,7 @@ export default function Login({navigation}){
             })
 
         });
-        let json = await response.json(); // Tranforma uma string JSON (que foi transformada pelo JSON.stringfy) em um obj js
+        let json = await response.json(); // esse response é a mesma let response acima. Essa variável envia dados e recee uma resposta
         
         if(json==='error'){
             setDisplay('flex');
