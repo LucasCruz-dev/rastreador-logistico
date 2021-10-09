@@ -25,7 +25,7 @@ export default function Login({navigation}){
             })
 
         });
-        let json = await response.json(); // esse response é a mesma let response acima. Essa variável envia dados e recee uma resposta
+        let json = await response.json(); // esse response é a mesma let response acima. Essa variável envia dados e recee uma resposta. A variável Json, transforma a reposta do servidor em um objeto pelo .Json()
         
         if(json==='error'){
             setDisplay('flex');
@@ -34,7 +34,7 @@ export default function Login({navigation}){
             },3000);
             await AsyncStorage.clear();
  } else{
-   let userData =  await AsyncStorage.setItem('userData', JSON.stringify(json));//setando no storage o json recebido do backend)
+   let userData =  await AsyncStorage.setItem('userData', JSON.stringify(json));//setando no storage o json recebido do backend e manda o usuário para a area restrita
    navigation.navigate('AreaRestrita');
  }
   
