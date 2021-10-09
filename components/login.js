@@ -25,7 +25,7 @@ export default function Login({navigation}){
             })
 
         });
-        let json = await response.json(); // Tranforma uma string JSON em um obj js
+        let json = await response.json(); // Tranforma uma string JSON (que foi transformada pelo JSON.stringfy) em um obj js
         
         if(json==='error'){
             setDisplay('flex');
@@ -54,8 +54,8 @@ export default function Login({navigation}){
                 <Text style={css.login__msg(display)}>Usuário ou Senha inválidos</Text>
             </View>
             <View style={css.login__form}>
-                <TextInput style={css.login__input} placeholder='Usuário' onChangeText={text=>setUser(text)}  /> {/* Atualizando o estado do user*/}
-                <TextInput style={css.login__input} placeholder='Senha' secureTextEntry={true}  onChangeText={text=>setPassword(text)} /> {/* Atualizando o estado do password*/}
+                <TextInput style={css.login__input} placeholder='Usuário' onChangeText={text=>setUser(text)}  /> 
+                <TextInput style={css.login__input} placeholder='Senha' secureTextEntry={true}  onChangeText={text=>setPassword(text)} />
                 <TouchableOpacity style={css.login__button} onPress={()=>sendForm()}>
                     <Text style={css.login__buttonText}> ENTRAR NO SISTEMA</Text>
                 </TouchableOpacity>
