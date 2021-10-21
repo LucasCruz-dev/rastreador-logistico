@@ -3,8 +3,7 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Home from './views/Home'
-import Login from './views/Login'
+import { Home, Login, Rastreio } from './views';
 
 
 export default function App() {
@@ -12,8 +11,14 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Home" component={Home} 
+        options = {{
+          title:'Bem-Vindo',
+         
+        }}
+        />
         <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Rastreio" component={Rastreio} />
       </Stack.Navigator>
     </NavigationContainer>
   );
