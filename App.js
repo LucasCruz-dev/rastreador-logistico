@@ -17,18 +17,11 @@ export default function App() {
          
         }}
         />
-        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Login" options = {{headerShown: false}} component={Login} />
         <Stack.Screen name="Rastreio" component={Rastreio} />
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
