@@ -1,11 +1,16 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
-export default function Home(props){
+export default function Home({navigation}){
 return (
  <View>
      <Text>Esse é meu componente Home</Text>
-     <Button title='Login' onPress={()=> props.navigation.navigate('Login')}/>
+     <TouchableOpacity
+        onPress={()=>navigation.navigate('Login')}
+     >
+       <Text> Ir para login</Text>
+     </TouchableOpacity>
+     
  </View>
 );
 }
