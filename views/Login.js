@@ -5,7 +5,9 @@ export default function Login(){
 return (
  <KeyboardAvoidingView>
      <View >
-         
+         <View>
+             <Text>Usuário ou senha inválidos</Text>
+         </View>
         <View style={css.form}>
             <TextInput placeholder='Usuário'/>
             <TextInput placeholder='Senha' secureTextEntry={true}/>
