@@ -1,9 +1,9 @@
 import React from 'react';
-import { StyleSheet, Text, View, KeyboardAvoidingView, TextInput, TouchableOpacity } from 'react-native';
+import { StyleSheet, Platform, Text, View, KeyboardAvoidingView, TextInput, TouchableOpacity, Platform } from 'react-native';
 import {css} from '../assets/css/Css'
 export default function Login(){
 return (
- <KeyboardAvoidingView>
+ <KeyboardAvoidingView behavior={Platform.OS == "ios" ? "padding" : "height"} style={css.container} >
      <View >
          <View>
              <Text style={css.login__msg}>Usuário ou senha inválidos</Text>
