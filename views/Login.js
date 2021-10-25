@@ -6,13 +6,13 @@ return (
  <KeyboardAvoidingView>
      <View >
          <View>
-             <Text>Usuário ou senha inválidos</Text>
+             <Text style={css.login__msg}>Usuário ou senha inválidos</Text>
          </View>
-        <View style={css.form}>
-            <TextInput placeholder='Usuário'/>
-            <TextInput placeholder='Senha' secureTextEntry={true}/>
-            <TouchableOpacity>
-                <Text>Entrar</Text>
+        <View style={css.login__form}>
+            <TextInput style={css.login__input} placeholder='Usuário'/>
+            <TextInput style={css.login__input} placeholder='Senha' secureTextEntry={true}/>
+            <TouchableOpacity style={css.login__btn}>
+                <Text style={css.login__btnText}>Entrar</Text>
             </TouchableOpacity>
         </View>
      </View>
